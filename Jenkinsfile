@@ -25,7 +25,7 @@ pipeline{
             steps {
                 sh '''
                     oc project aamjcs-greetings
-                    oc start-buuild greeting-service --follow --wait
+                    oc start-build greeting-service --follow --wait
                 '''
             }
         }
