@@ -21,6 +21,13 @@ pipeline{
             }
         }
 
-        // Add the "Deploy" stage here
+        stage('Deploy') {
+            steps {
+                sh '''
+                    oc project aamjcs-greetings
+                    oc start-buuild greeting-service --follow --wait
+                '''
+            }
+        }
     }
 }
